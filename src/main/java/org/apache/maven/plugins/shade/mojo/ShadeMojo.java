@@ -232,7 +232,7 @@ public class ShadeMojo
      * is set to something different than &lt;build>&lt;finalName>, no file replacement will be performed, even if
      * shadedArtifactAttached is being used.
      */
-    @Parameter
+    @Parameter( property = "maven.shade.finalName" )
     private String finalName;
 
     /**
@@ -350,7 +350,7 @@ public class ShadeMojo
      *
      * @since 1.4
      */
-    @Parameter
+    @Parameter( property = "maven.shade.minimizeJar" )
     private boolean minimizeJar;
 
     /**
@@ -386,7 +386,7 @@ public class ShadeMojo
     /**
      * When true, creates a shaded test-jar artifact as well.
      */
-    @Parameter( defaultValue = "false" )
+    @Parameter( property = "maven.shade.shadeTestJar", defaultValue = "false" )
     private boolean shadeTestJar;
 
     /**
